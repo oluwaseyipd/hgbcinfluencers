@@ -10,28 +10,6 @@ const LatestSermon = () => {
   return (
     <section className="py-16 bg-gray-50">
       <div className="px-[20px] md:px-[200px]">
-
-
-    <div>
-  <div>
-    <div>
-      <div>
-        <i class="fas fa-bullhorn"></i>
-      </div>
-      <div>
-        <h1>2025, The Overflow</h1>
-        <p>
-          Our word for the year in Higher Ground Baptist Church is “The Overflow”. <span><a href="">Click here</a></span> to listen and
-          download
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
         {/* Header Section */}
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
