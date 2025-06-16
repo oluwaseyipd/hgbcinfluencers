@@ -100,6 +100,8 @@ const LocationSection = () => {
               </div>
             </div>
 
+        <div className="flex flex-col space-y-5 md:flex-row md:space-x-5  lg:space-y-5 lg:flex-col">
+
             {/* Description Card */}
             <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100 rounded-3xl p-8 shadow-lg">
               <h4 className="text-xl font-bold text-gray-800 mb-3">
@@ -149,6 +151,7 @@ const LocationSection = () => {
                 </a>
               </div>
             </div>
+             </div>
           </div>
         </div>
       </div>
