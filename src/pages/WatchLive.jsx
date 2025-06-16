@@ -158,7 +158,7 @@ const WatchLive = () => {
               Watch Us Live
             </h1>
             
-            <p className="text-xl md:text-2xl text-blue-100 mb-5 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-2xl text-blue-100 mb-5 max-w-3xl mx-auto leading-relaxed">
               Experience worship, fellowship, and God's word from anywhere in the world. 
               Join our global community of believers.
             </p>
@@ -186,8 +186,8 @@ const WatchLive = () => {
         {/* Live Stream Platforms */}
         <div className="mb-20">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Choose Your Platform</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Choose Your Platform</h2>
+            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
               Connect with us on your preferred platform and never miss a moment of worship
             </p>
           </div>
@@ -206,7 +206,7 @@ const WatchLive = () => {
                   <div className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
                   
                   <div className="relative z-10">
-                    <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${platform.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                    <div className={`w-12 lg:w-16 h-12 lg:h-16 rounded-2xl bg-gradient-to-r ${platform.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                       <IconComponent className="w-8 h-8 text-white" />
                     </div>
                     
@@ -236,8 +236,8 @@ const WatchLive = () => {
         {/* Service Schedule */}
         <div className="mb-20">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Weekly Service Schedule</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Weekly Service Schedule</h2>
+            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
               Mark your calendar and join us for these transformative gatherings
             </p>
           </div>

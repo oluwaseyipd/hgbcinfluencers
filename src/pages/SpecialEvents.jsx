@@ -185,7 +185,7 @@ const SpecialEvents = () => {
               Special Events
             </h1>
             
-            <p className="text-xl md:text-2xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-2xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed">
               Transformative gatherings that inspire, connect, and empower young minds
             </p>
 
@@ -212,7 +212,7 @@ const SpecialEvents = () => {
         {/* Featured Events Carousel */}
         {featuredEvents.length > 0 && (
           <div className="mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">Featured Events</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">Featured Events</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {featuredEvents.map((event) => {
                 const colors = colorMap[event.color];
@@ -372,7 +372,7 @@ const SpecialEvents = () => {
 
         {/* All Events Grid */}
         <div className="mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">All Events</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">All Events</h2>
 
                                 {/* Desktop FIlter Functionality */}
                       <div className="hidden md:flex flex-wrap items-center justify-between gap-4 mb-8">
