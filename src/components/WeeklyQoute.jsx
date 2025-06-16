@@ -35,7 +35,7 @@ const WeeklyQoute = () => {
 
   return (
     <section className="py-16 bg-gray-50">
-      <div className="px-[20px] md:px-[100px] lg:px-[200px]">
+      <div className="px-4 md:px-12 lg:px-[200px]">
         {/* Header Section */}
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">

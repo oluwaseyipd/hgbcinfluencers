@@ -3,11 +3,11 @@ import { FaXTwitter, FaFacebookF, FaInstagram, FaLocationPin } from "react-icons
 
 const LocationSection = () => {
   return (
-    <div className="py-20 px-[20px] md:px-[200px] bg-gradient-to-br from-blue-50 via-white to-indigo-50 relative overflow-hidden">
+    <div className="py-20 px-4 md:px-12 lg:px-[200px] bg-gradient-to-br from-blue-50 via-white to-indigo-50 relative overflow-hidden">
       
       {/* Header Section */}
       <div className="text-center mb-16 relative z-10">
-        <h2 className="text-5xl md:text-6xl font-bold bg-black bg-clip-text text-transparent mb-6">
+        <h2 className="text-3xl md:text-6xl font-bold bg-black bg-clip-text text-transparent mb-6">
           Find us Here
         </h2>
         <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto font-light">
@@ -16,7 +16,7 @@ const LocationSection = () => {
       </div>
 
       {/* Main Campus Section */}
-      <div className="max-w-7xl mx-auto mb-20">
+      <div className="mx-auto mb-20">
         <div className="text-center mb-12">
           <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
             We're small enough to reach you and big enough to accommodate you.

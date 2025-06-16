@@ -18,7 +18,7 @@ const Footer = () => {
 <div className="absolute inset-0 bg-black/80"></div>
       
       {/* Content */}
-      <div className="relative z-10 px-5 md:px-24 flex flex-col md:flex-row gap-8 justify-between">
+      <div className="relative z-10 px-4 md:px-12 lg:px-[200px] flex flex-col md:flex-row gap-8 justify-between">
         {/* Logo & Info */}
         <div className="flex flex-col">
           <img src={logo} alt="logo" className="w-20 mb-3" />
@@ -30,7 +30,7 @@ const Footer = () => {
 
         {/* Quick Links */}
         <div>
-          <h3 className="text-2xl text-white font-bold mb-3">Quick Links</h3>
+          <h3 className="text-xl lg:text-2xl text-white font-bold mb-3">Quick Links</h3>
           <ul>
             {footerLinks.map((item, index) => (
               <li key={index} className="my-2">
@@ -47,7 +47,7 @@ const Footer = () => {
 
         {/* Social Links */}
         <div className="flex flex-col md:items-center">
-          <h3 className="text-2xl text-white font-bold mb-3">Follow Us</h3>
+          <h3 className="text-xl lg:text-2xl text-white font-bold mb-3">Follow Us</h3>
           <ul className="flex gap-5">
             {socialLinks.map((item, index) => (
               <li key={index}>
@@ -55,7 +55,7 @@ const Footer = () => {
                   href={item.path}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white text-3xl hover:text-orange-500"
+                  className="text-white text-xl lg:text-3xl hover:text-orange-500"
                 >
                   <item.icon />
                 </a>

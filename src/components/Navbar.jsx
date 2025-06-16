@@ -38,22 +38,22 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`px-[20px] md:px-[100px] py-2 lg:py-3 fixed w-full top-0 z-50 transition-all duration-300 ${
+      className={`px-4 md:px-12 lg:px-[200px] py-2 lg:py-3 fixed w-full top-0 z-50 transition-all duration-300 ${
         isScrolled ? "bg-white" : "bg-white"
       }`}
     >
       <div className="flex justify-between items-center">
         <Link to="/">
-          <img src={logo} alt="logo" className="w-10 lg:w-16 cursor-pointer" />
+          <img src={logo} alt="logo" className="w-10 md:w-8 lg:w-16 cursor-pointer" />
         </Link>
 
         {/* Desktop Navbar */}
-        <ul className="hidden lg:flex items-center gap-4">
+        <ul className="hidden md:flex items-center gap-4">
           {navLinks.map((item, index) => (
             <li key={index}>
               <Link
                 to={item.path}
-                className={`text-lg text-gray-600 hover:text-orange-500 transition-all duration-300 cursor-pointer ${
+                className={`text-sm lg:text-lg text-gray-600 hover:text-orange-500 transition-all duration-300 cursor-pointer ${
                   location.pathname === item.path ? "active-navlink" : ""
                 }`}
               >
@@ -63,7 +63,7 @@ const Navbar = () => {
           ))}
           <li>
             <Link to="/give">
-              <button className="bg-orange-500 hover:bg-orange-600 text-white px-5 py-2 rounded-lg hover:bg-primary-500 transition duration-300">
+              <button className="bg-orange-500 hover:bg-orange-600 text-white px-3 lg:px-5 lg:py-2 rounded-lg hover:bg-primary-500 transition duration-300">
                 Give
               </button>
             </Link>
@@ -73,7 +73,7 @@ const Navbar = () => {
         {/* Mobile Toggle Button */}
         <button
           onClick={toggleNavbar}
-          className="lg:hidden text-black text-xl"
+          className="md:hidden text-black text-xl"
         >
           {mobileMenuOpen ? <FaXmark /> : <FaBars />}
         </button>

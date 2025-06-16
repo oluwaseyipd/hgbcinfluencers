@@ -3,7 +3,7 @@ import give2 from "../assets/images/photizo.jpg";
 
 const GiveSection = () => {
   return (
-    <div className="px-[20px] md:px-[200px] py-20 bg-gradient-to-br from-slate-50 to-blue-50">
+    <div className="px-4 md:px-12 lg:px-[200px] py-20 bg-gradient-to-br from-slate-50 to-blue-50">
       {/* Header Section */}
       <div className="text-center mb-16">
         <h2 className="text-5xl md:text-6xl font-bold bg-clip-text text-black mb-6">
@@ -15,7 +15,7 @@ const GiveSection = () => {
       </div>
 
       {/* Main Content Grid */}
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div className="max-w-7xl mx-auto grid  md:grid-cols-2 gap-12 lg:gap-16 items-center">
         
         {/* Images Section */}
         <div className="relative">
@@ -45,7 +45,7 @@ const GiveSection = () => {
 
         {/* Content Section */}
         <div className="space-y-8">
-          <div className="space-y-6">
+          <div className="space-y-4">
             <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
               Our giving to God is our act of love and appreciation to Him. We
               believe that our faith is reflected in our actions, including
@@ -68,7 +68,7 @@ const GiveSection = () => {
           <div className="pt-4">
             <a 
               href="give.php" 
-              className="inline-flex items-center px-6 py-4 bg-orange-500 hover:bg-orange-600 text-white font-semibold text-lg rounded-full shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 hover:from-blue-700 hover:to-purple-700 group"
+              className="inline-flex items-center px-4 lg:px-6 py-2 lg:py-4 bg-orange-500 hover:bg-orange-600 text-white font-semibold text-lg rounded-full shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 hover:from-blue-700 hover:to-purple-700 group"
             >
               Give Now
               <svg 

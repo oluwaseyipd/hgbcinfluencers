@@ -4,15 +4,15 @@ import "swiper/css/autoplay";
 import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper/modules";
 import { latestSermon } from "../constants/latestSermon"; 
-import { FaAngleRight } from "react-icons/fa6";
+import { FaAngleRight, FaCalendar } from "react-icons/fa6";
 
 const LatestSermon = () => {
   return (
-    <section className="py-16 bg-gray-50">
-      <div className="px-[20px] md:px-[200px]">
+    <section className="py-16 px-4 md:px-12 lg:px-[200px] bg-gray-50">
+      <div className="">
         {/* Header Section */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+          <h2 className="text-3xl md:text-6xl font-bold text-gray-800 mb-4">
             Latest Sermon
           </h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
@@ -36,7 +36,7 @@ const LatestSermon = () => {
               slidesPerView: 2,
               spaceBetween: 20,
             },
-            1024: {
+            760: {
               slidesPerView: 3,
               spaceBetween: 30,
             },
@@ -68,15 +68,15 @@ const LatestSermon = () => {
                     href={item.link} 
                     className="block cursor-pointer group-hover:text-orange-600 transition-colors duration-200"
                   >
-                    <h4 className="text-xl md:text-2xl font-bold text-gray-800 mb-3 leading-tight">
+                    <h4 className="text-lg lg:text-2xl font-bold text-gray-800 mb-3 leading-tight">
                       {item.title}
                     </h4>
                   </a>
 
 
                   {item.date && (
-                    <div className="text-sm text-gray-500 mb-4">
-                      <i className="fas fa-calendar-alt mr-2"></i>
+                    <div className="flex items-center text-sm text-gray-500 mb-4">
+                      <FaCalendar className="mr-2 text-orange-400" />
                       {item.date}
                     </div>
                   )}

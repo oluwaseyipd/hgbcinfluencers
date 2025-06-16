@@ -17,7 +17,7 @@ const PageHeader = ({
       <div className="absolute inset-0 bg-black/60"></div>
       
       {/* Content */}
-      <div className="relative z-10 px-[20px] md:px-[100px] py-20 md:py-32">
+      <div className="relative z-10 px-4 md:px-12 lg:px-[200px] py-20 md:py-32">
         <div className="max-w-4xl mx-auto text-center text-white">
           <div>
             <h1 className="text-3xl md:text-5xl font-bold mb-4">

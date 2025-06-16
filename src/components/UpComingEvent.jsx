@@ -27,7 +27,7 @@ const UpComingEvent = () => {
   };
 
   return (
-    <div className="py-20 px-[20px] md:px-[200px] bg-gradient-to-br from-slate-50 via-white to-purple-50 relative overflow-hidden">
+    <div className="py-20 px-4 md:px-12 lg:px-[200px] bg-gradient-to-br from-slate-50 via-white to-purple-50 relative overflow-hidden">
       
       {/* Floating Background Elements */}
       <div className="absolute top-16 right-16 w-80 h-80 bg-gradient-to-br from-purple-400/10 to-pink-400/10 rounded-full blur-3xl"></div>
@@ -35,7 +35,7 @@ const UpComingEvent = () => {
       
       {/* Header Section */}
       <div className="text-center mb-16 relative z-10">
-        <h2 className="text-5xl md:text-6xl font-bold text-black bg-clip-text mb-6">
+        <h2 className="text-3xl md:text-6xl font-bold text-black bg-clip-text mb-6">
           Upcoming Events
         </h2>
         <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto font-light">
@@ -44,34 +44,37 @@ const UpComingEvent = () => {
       </div>
 
       {/* Main Content Grid */}
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-12 items-start relative z-10">
+      <div className="mx-auto grid grid-cols-1 gap-12 items-start relative z-10">
         
         {/* Events Timeline - Mobile: Each event followed by its image */}
-        <div className="lg:col-span-2 space-y-8">
+        <div className="col-span-1 space-y-8">
           {upcomingEvent.map((event, index) => {
             const IconComponent = event.icon;
             const colors = colorMap[event.color];
             
             return (
-              <div key={index} className="group">
-                <div className="flex flex-col md:flex-row gap-6 bg-white/60 backdrop-blur-sm border border-white/50 rounded-3xl p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500">
+              <div key={index} >
+               
+                <div className='flex flex-col md:flex-row gap-4'>
+                         {/* Event Box */}
+                <div className="group flex flex-col md:flex-row gap-6 bg-white/60 backdrop-blur-sm border border-white/50 rounded-3xl p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500">
                   {/* Date Badge */}
                   <div className="flex-shrink-0">
-                    <div className={`w-14 h-14 md:w-24 md:h-24 bg-gradient-to-br ${colors.badge} text-white rounded-2xl flex flex-col items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                    <div className={`w-14 h-14 md:w-16 lg:w-24 md:h-16 lg:h-24 bg-gradient-to-br ${colors.badge} text-white rounded-2xl flex flex-col items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                       <span className="text-xs md:text-sm font-bold opacity-90">{event.month}</span>
                       <span className="text-xl md:text-2xl font-bold">{event.day}</span>
                     </div>
                   </div>
                   
                   {/* Event Content */}
-                  <div className="flex-1">
+                  <div className="md:w-[300px] lg:w-full">
                     <a 
                       href={event.link}
-                      className={`block text-2xl md:text-3xl font-bold text-gray-800 mb-4 ${colors.hover} transition-colors duration-300 hover:underline cursor-pointer`}
+                      className={`block text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 mb-4 ${colors.hover} transition-colors duration-300 hover:underline cursor-pointer`}
                     >
                       {event.title}
                     </a>
-                    <p className="text-gray-600 leading-relaxed text-lg mb-4">
+                    <p className="text-gray-600 leading-relaxed text-sm lg:text-lg mb-4">
                       {event.content}
                     </p>
                     {event.title.includes("GLS") && (
@@ -86,10 +89,10 @@ const UpComingEvent = () => {
                     </div>
                   </div>
                 </div>
-                
-                {/* Event Image - Only visible on mobile */}
-                <div className="lg:hidden mt-6 relative group">
-                  <div className="overflow-hidden rounded-3xl shadow-2xl">
+
+                        {/* Event Image */}
+                <div className="relative group md:w-[500px]">
+                  <div className="overflow-hidden rounded-t-3xl shadow-2xl">
                     <img 
                       src={event.img} 
                       alt={`${event.title} Event`} 
@@ -104,64 +107,13 @@ const UpComingEvent = () => {
                     </div>
                   </div>
                 </div>
+
+                </div>
               </div>
             );
           })}
         </div>
 
-        {/* Images Section - Only visible on desktop */}
-        <div className="lg:col-span-1 hidden lg:block">
-          <div className="sticky top-8 space-y-6">
-            
-            {/* Main Event Image */}
-            <div className="relative group">
-              <div className="overflow-hidden rounded-3xl shadow-2xl">
-                <img 
-                  src={give1} 
-                  alt="Church Events" 
-                  className="w-full h-80 object-cover transform group-hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
-                
-                {/* Floating Event Card */}
-                <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-md rounded-2xl p-4 shadow-xl">
-                  <h5 className="font-bold text-gray-800 mb-1">Don't Miss Out!</h5>
-                  <p className="text-sm text-gray-600">Join us for these transformative events</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Secondary Image */}
-            <div className="relative group">
-              <div className="overflow-hidden rounded-2xl shadow-xl">
-                <img 
-                  src={give2} 
-                  alt="Community Gathering" 
-                  className="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-purple-900/40 via-transparent to-transparent"></div>
-              </div>
-            </div>
-
-            {/* Third Image - Replaces Register Now section */}
-            <div className="relative group">
-              <div className="overflow-hidden rounded-2xl shadow-xl">
-                <img 
-                  src={give1} 
-                  alt="Event Highlights" 
-                  className="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/40 via-transparent to-transparent"></div>
-                
-                {/* Optional overlay text */}
-                <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md rounded-xl p-3 shadow-lg">
-                  <h5 className="font-bold text-gray-800 mb-1 text-sm">Event Highlights</h5>
-                  <p className="text-xs text-gray-600">Transformative experiences await</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );

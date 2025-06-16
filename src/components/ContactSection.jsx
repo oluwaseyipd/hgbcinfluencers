@@ -2,7 +2,7 @@ import contact1 from "../assets/images/contact-us.jpg";
 
 const ContactSection = () => {
   return (
-    <div className="px-[20px] md:px-[200px] py-20 bg-blue-50 relative overflow-hidden">
+    <div className="px-4 md:px-12 lg:px-[200px] py-20 bg-blue-50 relative overflow-hidden">
       
       {/* Header Section */}
       <div className="text-center mb-16 relative z-10">
@@ -15,7 +15,7 @@ const ContactSection = () => {
       </div>
 
       {/* Main Content Grid */}
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-start relative z-10">
+      <div className="mx-auto grid lg:grid-cols-2 gap-16 items-center relative z-10">
         
         {/* Contact Form */}
         <div className="order-2 lg:order-1">
@@ -103,11 +103,11 @@ const ContactSection = () => {
         <div className="order-1 lg:order-2 relative">
           <div className="relative group">
             {/* Main Image Container */}
-            <div className="relative overflow-hidden rounded-3xl shadow-2xl transform group-hover:scale-[1.02] transition-transform duration-700">
+            <div className="relative md:h-[400px] lg:h-[600px] overflow-hidden rounded-3xl shadow-2xl transform group-hover:scale-[1.02] transition-transform duration-700">
               <img 
                 src={contact1} 
                 alt="Contact Us" 
-                className="w-full h-[500px] md:h-[600px] object-cover"
+                className="w-full object-cover"
               />
               {/* Gradient Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-indigo-900/40 via-transparent to-transparent"></div>

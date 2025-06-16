@@ -1,6 +1,6 @@
 const OverflowBanner = () => {
   return (
-    <div className="relative py-16 px-6 md:px-12 lg:px-24 xl:px-32 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 overflow-hidden">
+    <div className="relative py-16 px-6 md:px-12 lg:px-[200px] bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 overflow-hidden">
       
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
@@ -25,9 +25,9 @@ const OverflowBanner = () => {
           <div className="flex-shrink-0">
             <div className="relative">
               {/* Main Icon Container */}
-              <div className="w-24 h-24 md:w-32 md:h-32 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center shadow-2xl border border-white/30 group hover:scale-110 transition-transform duration-500">
+              <div className="w-24 h-24 lg:w-32 lg:h-32 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center shadow-2xl border border-white/30 group hover:scale-110 transition-transform duration-500">
                 <svg 
-                  className="w-12 h-12 md:w-16 md:h-16 text-white group-hover:rotate-12 transition-transform duration-500" 
+                  className="w-12 h-12 lg:w-16 lg:h-16 text-white group-hover:rotate-12 transition-transform duration-500" 
                   fill="currentColor" 
                   viewBox="0 0 20 20"
                 >
@@ -36,14 +36,14 @@ const OverflowBanner = () => {
               </div>
               
               {/* Pulsing Ring */}
-              <div className="absolute inset-0 w-24 h-24 md:w-32 md:h-32 rounded-full border-2 border-white/50 animate-ping"></div>
-              <div className="absolute inset-2 w-20 h-20 md:w-28 md:h-28 rounded-full border border-white/30 animate-ping delay-1000"></div>
+              <div className="absolute inset-0 w-24 h-24 lg:w-32 lg:h-32 rounded-full border-2 border-white/50 animate-ping"></div>
+              <div className="absolute inset-2 w-20 h-20 lg:w-28 lg:h-28 rounded-full border border-white/30 animate-ping delay-1000"></div>
             </div>
           </div>
 
           {/* Content Section */}
           <div className="flex-1 text-center md:text-left">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6">
+            <h1 className="text-4xl md:text-4xl lg:text-6xl font-bold text-white mb-4 md:mb-6">
               <span className="bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent">
                 2025,
               </span>
