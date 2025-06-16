@@ -7,9 +7,9 @@ const About = () => {
     <div>
       <Navbar />
       <PageHeader 
-        title="About Higher Ground Baptist Church"
-        breadcrumb="Who We Are"
-        subtitle="Discover our mission, vision, and the heart behind our ministry"
+        title="Watch Us Live"
+        breadcrumb="What Us Live"
+        subtitle=""
       />
 
       

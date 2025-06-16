@@ -136,19 +136,19 @@ const Sermon = () => {
       <div className="container mx-auto px-4 py-8">
         
  {/* Search and Filter Section */}
-        <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-          <div className="flex flex-col md:flex-row gap-4">
+          <div className="flex flex-col md:flex-row gap-4 mb-8 md:mb-16">
             {/* Search Input - Takes half the width */}
-            <div className="relative flex-1 md:w-1/2">
+            <div className='flex-1 '>
+            <div className="relative md:w-1/2">
               <FaMagnifyingGlass className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
               <input
                 type="text"
                 placeholder="Search sermons..."
-                className="w-full pl-10 text-gray-800 outline-0 pr-4 py-2  border border-gray-300 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full pl-10 text-gray-800 outline-0 pr-4 py-2  border border-gray-300 rounded-full focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
-            </div>
+            </div></div>
             
             {/* Filter Controls - Stacked on the right */}
             <div className="flex gap-2 md:w-auto">
@@ -175,7 +175,7 @@ const Sermon = () => {
               </select>
             </div>
           </div>
-        </div>
+        
         
         {/* Sermon Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
