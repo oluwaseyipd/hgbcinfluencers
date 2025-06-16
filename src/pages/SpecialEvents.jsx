@@ -44,7 +44,7 @@ const SpecialEvents = () => {
       registered: 856,
       tags: ["Annual", "Worship", "Community"],
       speaker: "Pastor John Smith",
-      price: "$25"
+      price: "Free"
     },
     {
       id: 3,
@@ -167,7 +167,7 @@ const SpecialEvents = () => {
     <>
     <Navbar />
 
-        <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-purple-50">
+        <div className="min-h-screen py-16 px-6 md:px-12 bg-gradient-to-br from-slate-50 via-white to-purple-50">
       {/* Hero Section */}
       <div className="relative overflow-hidden bg-gradient-to-r from-indigo-900 via-purple-900 to-pink-900">
         <div className="absolute inset-0 bg-black/20"></div>
@@ -189,16 +189,16 @@ const SpecialEvents = () => {
               Transformative gatherings that inspire, connect, and empower young minds
             </p>
 
-            <div className="flex items-center justify-center space-x-8 text-white/80">
+            <div className="flex flex-wrap items-center justify-center space-x-8 text-white/80">
               <div className="flex items-center">
                 <Calendar className="w-6 h-6 mr-2" />
                 <span className="font-medium">{specialEvents.length} Upcoming Events</span>
               </div>
-              <div className="flex items-center">
+              <div className="flex items-center mt-5 md:mt-0">
                 <Users className="w-6 h-6 mr-2" />
                 <span className="font-medium">Join Thousands</span>
               </div>
-              <div className="flex items-center">
+              <div className="flex items-center mt-5 md:mt-0">
                 <Globe className="w-6 h-6 mr-2" />
                 <span className="font-medium">Global Impact</span>
               </div>
@@ -209,28 +209,6 @@ const SpecialEvents = () => {
 
       {/* Filter Section */}
       <div className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
-        <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
-          <div className="flex items-center space-x-4">
-            <Filter className="w-5 h-5 text-gray-600" />
-            <span className="text-gray-700 font-medium">Filter Events:</span>
-            <div className="flex space-x-2">
-              {['all', 'leadership', 'conference', 'youth', 'holiday'].map((category) => (
-                <button
-                  key={category}
-                  onClick={() => setFilter(category)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                    filter === category
-                      ? 'bg-purple-600 text-white shadow-lg'
-                      : 'bg-white text-gray-600 hover:bg-purple-50 border border-gray-200'
-                  }`}
-                >
-                  {category.charAt(0).toUpperCase() + category.slice(1)}
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-
         {/* Featured Events Carousel */}
         {featuredEvents.length > 0 && (
           <div className="mb-16">
@@ -255,20 +233,26 @@ const SpecialEvents = () => {
 
                     {/* Event Image */}
                     <div className="relative h-48 overflow-hidden">
-                      <div className={`w-full h-full bg-gradient-to-br ${colors.gradient}`}></div>
-                      <div className={`absolute inset-0 bg-gradient-to-t ${colors.light} opacity-90`}></div>
-                      
+                      <div
+                        className={`w-full h-full bg-gradient-to-br ${colors.gradient}`}
+                      ></div>
+                      <div
+                        className={`absolute inset-0 bg-gradient-to-t ${colors.light} opacity-90`}
+                      ></div>
+
                       {/* Event Info Overlay */}
                       <div className="absolute bottom-4 left-4 right-4">
                         <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-4">
-                          <h3 className="text-xl font-bold text-gray-900 mb-1">{event.title}</h3>
+                          <h3 className="text-xl font-bold text-gray-900 mb-1">
+                            {event.title}
+                          </h3>
                           <div className="flex items-center text-gray-600 text-sm">
                             <Calendar className="w-4 h-4 mr-1" />
-                            {new Date(event.date).toLocaleDateString('en-US', {
-                              weekday: 'long',
-                              year: 'numeric',
-                              month: 'long',
-                              day: 'numeric'
+                            {new Date(event.date).toLocaleDateString("en-US", {
+                              weekday: "long",
+                              year: "numeric",
+                              month: "long",
+                              day: "numeric",
                             })}
                           </div>
                         </div>
@@ -281,22 +265,36 @@ const SpecialEvents = () => {
                       {countdown && (
                         <div className="mb-4 p-4 bg-gradient-to-r from-red-50 to-orange-50 rounded-xl border border-red-100">
                           <div className="text-center">
-                            <div className="text-sm text-red-600 font-medium mb-2">EVENT STARTS IN</div>
+                            <div className="text-sm text-red-600 font-medium mb-2">
+                              EVENT STARTS IN
+                            </div>
                             <div className="grid grid-cols-4 gap-2 text-center">
                               <div className="bg-white rounded-lg p-2 shadow-sm">
-                                <div className="text-2xl font-bold text-red-600">{countdown.days}</div>
-                                <div className="text-xs text-gray-600">Days</div>
+                                <div className="text-2xl font-bold text-red-600">
+                                  {countdown.days}
+                                </div>
+                                <div className="text-xs text-gray-600">
+                                  Days
+                                </div>
                               </div>
                               <div className="bg-white rounded-lg p-2 shadow-sm">
-                                <div className="text-2xl font-bold text-red-600">{countdown.hours}</div>
-                                <div className="text-xs text-gray-600">Hours</div>
+                                <div className="text-2xl font-bold text-red-600">
+                                  {countdown.hours}
+                                </div>
+                                <div className="text-xs text-gray-600">
+                                  Hours
+                                </div>
                               </div>
                               <div className="bg-white rounded-lg p-2 shadow-sm">
-                                <div className="text-2xl font-bold text-red-600">{countdown.minutes}</div>
+                                <div className="text-2xl font-bold text-red-600">
+                                  {countdown.minutes}
+                                </div>
                                 <div className="text-xs text-gray-600">Min</div>
                               </div>
                               <div className="bg-white rounded-lg p-2 shadow-sm">
-                                <div className="text-2xl font-bold text-red-600">{countdown.seconds}</div>
+                                <div className="text-2xl font-bold text-red-600">
+                                  {countdown.seconds}
+                                </div>
                                 <div className="text-xs text-gray-600">Sec</div>
                               </div>
                             </div>
@@ -304,17 +302,23 @@ const SpecialEvents = () => {
                         </div>
                       )}
 
-                      <p className="text-gray-600 mb-4 line-clamp-2">{event.description}</p>
+                      <p className="text-gray-600 mb-4 line-clamp-2">
+                        {event.description}
+                      </p>
 
                       {/* Event Meta */}
                       <div className="space-y-2 mb-4">
                         <div className="flex items-center text-gray-600">
                           <Clock className="w-4 h-4 mr-2" />
-                          <span className="text-sm">{event.time} - {event.location}</span>
+                          <span className="text-sm">
+                            {event.time} - {event.location}
+                          </span>
                         </div>
                         <div className="flex items-center text-gray-600">
                           <Users className="w-4 h-4 mr-2" />
-                          <span className="text-sm">{event.registered}/{event.capacity} registered</span>
+                          <span className="text-sm">
+                            {event.registered}/{event.capacity} registered
+                          </span>
                         </div>
                       </div>
 
@@ -323,7 +327,11 @@ const SpecialEvents = () => {
                         <div className="bg-gray-200 rounded-full h-2">
                           <div
                             className={`bg-gradient-to-r ${colors.gradient} h-2 rounded-full transition-all duration-500`}
-                            style={{ width: `${(event.registered / event.capacity) * 100}%` }}
+                            style={{
+                              width: `${
+                                (event.registered / event.capacity) * 100
+                              }%`,
+                            }}
                           ></div>
                         </div>
                       </div>
@@ -342,7 +350,9 @@ const SpecialEvents = () => {
 
                       {/* Action Buttons */}
                       <div className="flex space-x-2">
-                        <button className={`flex-1 py-3 px-4 bg-gradient-to-r ${colors.gradient} text-white rounded-xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105 active:scale-95`}>
+                        <button
+                          className={`flex-1 py-3 px-4 bg-gradient-to-r ${colors.gradient} text-white rounded-xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105 active:scale-95`}
+                        >
                           <div className="flex items-center justify-center">
                             <Calendar className="w-4 h-4 mr-2" />
                             Register Now
@@ -363,6 +373,73 @@ const SpecialEvents = () => {
         {/* All Events Grid */}
         <div className="mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">All Events</h2>
+
+                                {/* Desktop FIlter Functionality */}
+                      <div className="hidden md:flex flex-wrap items-center justify-between gap-4 mb-8">
+                        <div className="flex items-center space-x-4">
+                          <Filter className="w-5 h-5 text-gray-600" />
+                          <span className="text-gray-700 font-medium">
+                            Filter Events:
+                          </span>
+                          <div className="flex space-x-2">
+                            {[
+                              "all",
+                              "leadership",
+                              "conference",
+                              "youth",
+                              "holiday",
+                            ].map((category) => (
+                              <button
+                                key={category}
+                                onClick={() => setFilter(category)}
+                                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                                  filter === category
+                                    ? "bg-purple-600 text-white shadow-lg"
+                                    : "bg-white text-gray-600 hover:bg-purple-50 border border-gray-200"
+                                }`}
+                              >
+                                {category.charAt(0).toUpperCase() +
+                                  category.slice(1)}
+                              </button>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+
+                               {/* MObile  FIlter Functionality */}
+                               <div className="md:hidden flex flex-wrap items-center justify-between gap-4 mb-8">
+                                <div className="flex items-center space-x-4">
+                          <Filter className="w-5 h-5 text-gray-600" />
+                          <span className="text-gray-700 font-medium">
+                            Filter Events:
+                          </span>
+                          </div>
+                          <div>
+                          <div className="flex space-x-1">
+                            {[
+                              "all",
+                              "leadership",
+                              "conference",
+                              "youth",
+                              "holiday",
+                            ].map((category) => (
+                              <button
+                                key={category}
+                                onClick={() => setFilter(category)}
+                                className={`px-2 py-1 rounded-full text-sm font-medium transition-all duration-300 ${
+                                  filter === category
+                                    ? "bg-purple-600 text-white shadow-lg"
+                                    : "bg-white text-gray-600 hover:bg-purple-50 border border-gray-200"
+                                }`}
+                              >
+                                {category.charAt(0).toUpperCase() +
+                                  category.slice(1)}
+                              </button>
+                            ))}
+                          </div>
+                        </div>
+                               </div>
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredEvents.map((event) => {
               const colors = colorMap[event.color];

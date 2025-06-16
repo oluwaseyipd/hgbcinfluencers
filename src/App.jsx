@@ -5,12 +5,13 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './index.css' 
 
 //Pages
-import Home from './pages/Home'
-import About from './pages/About'
-import WatchLive from './pages/WatchLive'
-import Sermon from './pages/Sermon'
-import BuildersAcademy from './pages/BuildersAcademy'
-import SpecialEvents from './pages/SpecialEvents'
+import Home from './pages/Home';
+import About from './pages/About';
+import WatchLive from './pages/WatchLive';
+import Sermon from './pages/Sermon';
+import BuildersAcademy from './pages/BuildersAcademy';
+import SpecialEvents from './pages/SpecialEvents';
+import Give from "./pages/Give";
 
 // Dashboard Pages
 import AdminLayout from "./pages/dashboard/AdminLayout";
@@ -32,6 +33,7 @@ function App() {
           <Route path="/sermon" element={<Sermon />} />
           <Route path="/builders-academy" element={<BuildersAcademy />} />
           <Route path="/special-events" element={<SpecialEvents/>} />
+          <Route path="/give" element={<Give/>} />
 
           {/* Dashboard Pages - Nested Routes */}
           <Route path="/admin/*" element={<AdminLayout />}>

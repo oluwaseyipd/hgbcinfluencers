@@ -130,7 +130,7 @@ const WatchLive = () => {
   return (
     <>
     <Navbar />
- <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
+ <div className="min-h-screen py-16 px-6 md:px-12 bg-gradient-to-br from-slate-50 via-white to-blue-50">
       {/* Hero Section */}
       <div className="relative overflow-hidden bg-gradient-to-r from-purple-900 via-blue-900 to-indigo-900">
         <div className="absolute inset-0 bg-black/20"></div>
@@ -164,14 +164,14 @@ const WatchLive = () => {
             </p>
 
             {(isLive || nextService) && (
-              <div className="flex items-center justify-center space-x-6 text-white/80 mb-8">
+              <div className="flex flex-wrap items-center justify-center space-x-6 text-white/80 mb-8">
                 {nextService && (
                   <div className="flex items-center">
                     <FaCalendar className="w-5 h-5 mr-2" />
                     <span className="font-medium">Next: {nextService}</span>
                   </div>
                 )}
-                <div className="flex items-center">
+                <div className="flex items-center mt-3 md:mt-0">
                   <FaClock className="w-5 h-5 mr-2" />
                   <span className="font-medium">{countdown ? `${countdown}` : currentTime.toLocaleTimeString()}</span>
                 </div>
