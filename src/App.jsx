@@ -54,7 +54,7 @@ function App() {
   // Show main app after loading
   return (
     <>
-      <Router basename="/hgbcinfluencers">
+      <Router>
         <Routes>
           {/* Public Pages */}
           <Route path="/" element={<Home />} />
