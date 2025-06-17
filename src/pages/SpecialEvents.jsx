@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Calendar, Clock, MapPin, Users, Heart, Share2, Bell, Star, Globe, Building, ArrowRight, Bookmark, Filter } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { specialEvents } from '../constants/events';
+import { specialEvents, colorMap } from '../constants/events';
 
 const SpecialEvents = () => {
   const [currentTime, setCurrentTime] = useState(new Date());

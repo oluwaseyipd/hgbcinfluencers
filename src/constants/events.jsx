@@ -73,7 +73,7 @@ export const specialEvents = [
     }
   ];
 
-  const colorMap = {
+  export const colorMap = {
     purple: {
       gradient: "from-purple-500 to-purple-700",
       light: "from-purple-50 to-purple-100",
