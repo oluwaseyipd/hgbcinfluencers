@@ -3,7 +3,7 @@ import { FaDownload, FaLink, FaHeadphonesSimple, FaMagnifyingGlass, FaPlay, FaPa
 import {sermonData} from "../constants/sermonData";
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import PageHeader from '../components/PageHeader';
+
 
 const Sermon = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -126,11 +126,24 @@ const Sermon = () => {
   return (
     <>
     <Navbar />
-      <PageHeader 
-        title="Sermon"
-        breadcrumb="Sermon"
-        subtitle="Listen to inspiring messages that transform lives"
-      />
+
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 py-20 overflow-hidden">
+        <div className="absolute inset-0 bg-black/30"></div>
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+          <div className="absolute bottom-20 right-20 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+        </div>
+        
+        <div className="relative z-10 max-w-6xl mx-auto px-4 text-center">
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+            Sermon 
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            Nourish your spirit with the Word of God. Listen to our latest sermons and be transformed!
+          </p>
+        </div>
+      </section>
     <div className="min-h-screen bg-gray-50">
       
       <div className="container mx-auto px-4 py-8">

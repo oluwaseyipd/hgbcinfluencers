@@ -1,10 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { FaPlus, FaChartColumn, FaHeadphonesSimple, FaShield, FaXmark } from "react-icons/fa6";
+import { FaPlus, FaChartColumn, FaHeadphonesSimple, FaShield, FaXmark, FaCalendar } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
 
 const Sidebar = ({ toggleSidebar, sidebarOpen  }) => {
     const sidebarRef = useRef(null);
   const [isCoursesOpen, setIsCoursesOpen] = useState(false);
+  
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -29,7 +30,7 @@ const Sidebar = ({ toggleSidebar, sidebarOpen  }) => {
       {/* Mobile Overlay */}
       {sidebarOpen && (
         <div 
-          className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
+          className="fixed inset-0 bg-opacity-50 z-40 lg:hidden"
           onClick={toggleSidebar}
         />
       )}
@@ -98,6 +99,15 @@ const Sidebar = ({ toggleSidebar, sidebarOpen  }) => {
             >
               <FaHeadphonesSimple className='text-xl group-hover:text-purple-400 transition-colors' />
               <span className="font-medium">Audio</span>
+            </Link>
+
+             <Link
+              to="/admin/events"
+              onClick={handleNavItemClick}
+              className="flex items-center space-x-3 px-4 py-3 text-slate-300 hover:text-white hover:bg-slate-700/50 rounded-lg transition-all duration-200 group"
+            >
+              <FaCalendar className='text-xl group-hover:text-blue-400 transition-colors' />
+              <span className="font-medium">Events</span>
             </Link>
           </div>
         </nav>

@@ -94,36 +94,7 @@ const Overview = () => {
           </h1>
           <p className="text-slate-600 mt-1">Track your audio upload performance and trends</p>
         </div>
-        
-        {/* Filters */}
-        <div className="flex gap-3 items-center">
-          <div className="flex items-center gap-2 bg-white rounded-lg px-3 py-2 border border-slate-200 shadow-sm">
-            <Calendar className="w-4 h-4 text-slate-500" />
-            <select 
-              value={selectedYear} 
-              onChange={(e) => setSelectedYear(e.target.value)}
-              className="bg-transparent border-none outline-none text-gray-800 text-sm font-medium"
-            >
-              {availableYears.map(year => (
-                <option key={year} value={year.toString()}>{year}</option>
-              ))}
-            </select>
-          </div>
-          
-          <div className="flex items-center gap-2 bg-white rounded-lg px-3 py-2 border border-slate-200 shadow-sm">
-            <Filter className="w-4 h-4 text-slate-500" />
-            <select 
-              value={selectedCategory} 
-              onChange={(e) => setSelectedCategory(e.target.value)}
-              className="bg-transparent border-none outline-none text-gray-800 text-sm font-medium"
-            >
-              <option value="all">All Categories</option>
-              {availableCategories.map(category => (
-                <option key={category} value={category}>{category}</option>
-              ))}
-            </select>
-          </div>
-        </div>
+
       </div>
 
       {/* Stats Cards */}
@@ -169,11 +140,41 @@ const Overview = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Line Chart */}
         <div className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm">
-          <div className="flex items-center justify-between mb-6">
+          <div className="flex flex-col md:flex-row items-center justify-between mb-6">
             <div>
               <h3 className="text-lg font-semibold text-slate-900">Upload Trends</h3>
               <p className="text-slate-600 text-sm">Monthly audio upload statistics for {selectedYear}</p>
             </div>
+                    {/* Filters */}
+        <div className="flex gap-3 items-center">
+          <div className="flex items-center gap-2 bg-white rounded-lg px-3 py-2 border border-slate-200 shadow-sm">
+            <Calendar className="w-4 h-4 text-slate-500" />
+            <select 
+              value={selectedYear} 
+              onChange={(e) => setSelectedYear(e.target.value)}
+              className="bg-transparent border-none outline-none text-gray-800 text-sm font-medium"
+            >
+              {availableYears.map(year => (
+                <option key={year} value={year.toString()}>{year}</option>
+              ))}
+            </select>
+          </div>
+          
+          <div className="flex items-center gap-2 bg-white rounded-lg px-3 py-2 border border-slate-200 shadow-sm">
+            <Filter className="w-4 h-4 text-slate-500" />
+            <select 
+              value={selectedCategory} 
+              onChange={(e) => setSelectedCategory(e.target.value)}
+              className="bg-transparent border-none outline-none text-gray-800 text-sm font-medium"
+            >
+              <option value="all">All Categories</option>
+              {availableCategories.map(category => (
+                <option key={category} value={category}>{category}</option>
+              ))}
+            </select>
+
+          </div>
+        </div>
           </div>
           
           <div className="h-80">
@@ -216,11 +217,24 @@ const Overview = () => {
 
         {/* Category Breakdown */}
         <div className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm">
-          <div className="flex items-center justify-between mb-6">
+          <div className="flex flex-col md:flex-row items-center justify-between mb-6">
             <div>
               <h3 className="text-lg font-semibold text-slate-900">Category Breakdown</h3>
               <p className="text-slate-600 text-sm">Audio files by category in {selectedYear}</p>
             </div>
+
+                      <div className="flex items-center gap-2 bg-white rounded-lg px-3 py-2 border border-slate-200 shadow-sm">
+            <Calendar className="w-4 h-4 text-slate-500" />
+            <select 
+              value={selectedYear} 
+              onChange={(e) => setSelectedYear(e.target.value)}
+              className="bg-transparent border-none outline-none text-gray-800 text-sm font-medium"
+            >
+              {availableYears.map(year => (
+                <option key={year} value={year.toString()}>{year}</option>
+              ))}
+            </select>
+          </div>
           </div>
           
           <div className="h-80">

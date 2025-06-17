@@ -38,6 +38,7 @@ export const socialLinks = [
     {icon: FaYoutube , path: "https://youtube.com/@hgbcinfluencers"},
 ];
 
+//HOmepage
 
 export const heroTexts = [
 
@@ -129,3 +130,130 @@ export const upcomingEvent = [
     link: "/events/bisum-2024"
   }
 ];
+
+
+// About Page
+
+export const coreValues = [
+    {
+      letter: 'C',
+      title: 'Commitment',
+      description: 'Dedicated to serving God and our community with unwavering devotion and faithful stewardship of His calling.',
+      icon: 'C',
+      color: 'from-red-500 to-pink-500'
+    },
+    {
+      letter: 'H',
+      title: 'Holiness',
+      description: 'Living set apart for God, pursuing righteousness and spiritual purity in all aspects of life and ministry.',
+      icon: 'H',
+      color: 'from-yellow-500 to-orange-500'
+    },
+    {
+      letter: 'E',
+      title: 'Excellence',
+      description: 'Striving for the highest standards in worship, service, and spiritual growth, giving our best for God\'s glory.',
+      icon: 'E',
+      color: 'from-blue-500 to-indigo-500'
+    },
+    {
+      letter: 'L',
+      title: 'Love',
+      description: 'Demonstrating Christ\'s unconditional love through compassionate service and genuine care for one another.',
+      icon: 'L',
+      color: 'from-pink-500 to-rose-500'
+    },
+    {
+      letter: 'I',
+      title: 'Integrity',
+      description: 'Walking in truth and authenticity, maintaining moral uprightness and transparency in all our dealings.',
+      icon: 'I',
+      color: 'from-green-500 to-emerald-500'
+    }
+  ];
+
+ export const pastors = [
+    {
+      name: 'Samson Oluwaseun Ayangoke',
+      role: 'Lead Pastor',
+      image: '/assets/img/pastors/pastor-1.png',
+      social: {
+        facebook: 'https://web.facebook.com/samsonayangoke',
+        twitter: 'https://twitter.com/samsonayangoke_',
+        linkedin: 'https://www.linkedin.com/in/samsonayangoke',
+        instagram: 'https://www.instagram.com/samsonayangoke/?hl=en'
+      }
+    },
+    {
+      name: 'Victory Tolulope Ayangoke',
+      role: 'Associate Pastor',
+      image: '/assets/img/pastors/pastor-2.png',
+      social: {
+        facebook: 'https://web.facebook.com/victoryayangoke',
+        linkedin: 'https://www.linkedin.com/in/victoryayangoke',
+        instagram: 'https://www.instagram.com/victoryayangoke/'
+      }
+    },
+    {
+      name: 'Rev\'d Felicien Juh',
+      role: 'Associate Pastor',
+      image: '/assets/img/pastors/image-1.jpeg',
+      social: {
+        facebook: 'https://web.facebook.com/felicien.ngirnyu.3'
+      }
+    },
+    {
+      name: 'Ayanfe Fakunle',
+      role: 'Associate Pastor',
+      image: '/assets/img/pastors/image-1.jpeg',
+      social: {
+        facebook: 'https://web.facebook.com/fakunle.ayanfesamuel/',
+        linkedin: 'https://www.linkedin.com/in/ayanfe',
+        instagram: 'https://www.instagram.com/oluwasegunfunmi_amusan/'
+      }
+    },
+    {
+      name: 'Stephen Taiwo Bamigbola',
+      role: 'Associate Pastor',
+      image: '/assets/img/pastors/pastor-6.png',
+      social: {
+        facebook: 'https://web.facebook.com/bamigbola.stephenkingdomstar',
+        instagram: 'https://www.instagram.com/kingdomstar_/'
+      }
+    },
+    {
+      name: 'Tanko Shekwa\'aga',
+      role: 'Associate Pastor',
+      image: '/assets/img/pastors/pastor-7.png',
+      social: {
+        facebook: 'https://web.facebook.com/tanko.shekwaaga'
+      }
+    }
+  ];
+
+ export const testimonials = [
+    {
+      name: 'Sarah Johnson',
+      role: 'University Graduate',
+      content: 'HGBC transformed my life completely. The discipleship programs and spiritual guidance I received here prepared me not just for my career, but for life itself. The community became my family.',
+      rating: 5
+    },
+    {
+      name: 'David Adebayo',
+      role: 'Business Owner',
+      content: 'Through BISUM and the Investment Club, I learned practical skills that helped me establish my business. The church doesn\'t just focus on spiritual growth but holistic development.',
+      rating: 5
+    },
+    {
+      name: 'Grace Okonkwo',
+      role: 'Alumni',
+      content: 'The sound biblical teaching and emphasis on excellence at HGBC shaped my character. Years after graduation, I still carry the values I learned here into my professional life.',
+      rating: 5
+    },
+    {
+      name: 'Emmanuel Peters',
+      role: 'Current Member',
+      content: 'From worshipping in open fields to having our own facility, I\'ve witnessed God\'s faithfulness through HGBC. This church truly lives up to its name - we\'re going to higher ground!',
+      rating: 5
+    }
+  ];

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FaBell, FaUser, FaChevronDown, FaBars } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
 
-const Header = ({ onMenuClick }) => {
+const Header = ({ toggleSidebar }) => {
   const [showNotifications, setShowNotifications] = useState(false);
   const [showUserMenu, setShowUserMenu] = useState(false);
 
@@ -16,7 +16,7 @@ const Header = ({ onMenuClick }) => {
     <header className="fixed top-0 right-0 left-0 lg:left-64 h-16 bg-white border-b border-slate-200 px-4 lg:px-6 flex items-center justify-between shadow-sm z-30">
       {/* Mobile Menu Button */}
       <button
-        onClick={onMenuClick}
+        onClick={toggleSidebar}
         className="lg:hidden p-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-colors duration-200"
       >
         <FaBars className="w-5 h-5" />

@@ -104,7 +104,7 @@ const Audio = () => {
 
       {/* Search and Filters */}
       <div className="mt-1 md:mt-[100px]">
-        <div className="flex flex-col lg:flex-row gap-4">
+        <div className="flex flex-col md:flex-row gap-4">
           {/* Search Bar */}
           <div className="flex-1">
             <div className="relative">
@@ -114,7 +114,7 @@ const Audio = () => {
                 placeholder="Search audio files..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full md:w-1/3 pl-10 pr-4 py-2 border text-gray-800  border-slate-300 rounded-full outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                className="w-full lg:w-1/3 pl-10 pr-4 py-2 border text-gray-800  border-slate-300 rounded-full outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
               />
             </div>
           </div>
@@ -158,10 +158,10 @@ const Audio = () => {
         <div className="px-6 pb-2 pt-4 border-b border-gray-200">
           <div className="grid grid-cols-12 gap-4 items-center text-sm font-medium text-black">
             <div className="col-span-5 lg:col-span-4">Title</div>
-            <div className="col-span-2 hidden sm:block">Category</div>
+            <div className="col-span-3 hidden sm:block">Category</div>
             <div className="col-span-2 hidden lg:block">Year</div>
             <div className="col-span-2 hidden sm:block">Length</div>
-            <div className="col-span-3 lg:col-span-2 text-right">Actions</div>
+            <div className="col-span-2 lg:col-span-1 text-right">Actions</div>
           </div>
         </div>
       <div className="verflow-hidden">
@@ -187,7 +187,7 @@ const Audio = () => {
                 </div>
 
                 {/* Category */}
-                <div className="col-span-2 hidden sm:block">
+                <div className="col-span-3 hidden sm:block">
                   <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
                     {audio.category}
                   </span>
@@ -204,7 +204,7 @@ const Audio = () => {
                 </div>
 
                 {/* Actions */}
-                <div className="col-span-3 lg:col-span-2 flex items-center justify-end space-x-2">
+                <div className="col-span-2 lg:col-span-1 flex items-center justify-end space-x-2">
                   <button 
                    onClick={() => handleEdit(audio)}
                   className="p-2 text-slate-500 hover:text-blue-600 hover:bg-blue-50 cursor-pointer rounded-lg transition-colors">

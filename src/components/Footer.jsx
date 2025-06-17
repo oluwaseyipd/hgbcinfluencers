@@ -6,7 +6,7 @@ import footerImage from "../assets/images/hero/footer.jpg";
 const Footer = () => {
   return (
     <footer 
-      className="relative pt-16 pb-5 text-gray-100"
+      className="relative text-gray-100"
       style={{
         backgroundImage: `url(${footerImage})`,
         backgroundSize: 'cover',
@@ -18,7 +18,7 @@ const Footer = () => {
 <div className="absolute inset-0 bg-black/80"></div>
       
       {/* Content */}
-      <div className="relative z-10 px-4 md:px-12 lg:px-[200px] flex flex-col md:flex-row gap-8 justify-between">
+      <div className="relative z-10 max-w-7xl pt-16 pb-5 mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row gap-8 justify-between">
         {/* Logo & Info */}
         <div className="flex flex-col">
           <img src={logo} alt="logo" className="w-20 mb-3" />
@@ -66,7 +66,7 @@ const Footer = () => {
       </div>
 
       {/* Footer Bottom */}
-      <div className="relative z-10">
+      <div className="relative z-10 pb-2">
         <hr className="border-t border-white mt-10" />
         <p className="text-white text-center mt-6 text-sm">
           © All rights reserved {new Date().getFullYear()} | Higher Ground Baptist Church, Ogbomoso.
