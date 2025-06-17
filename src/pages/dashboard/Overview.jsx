@@ -90,9 +90,9 @@ const Overview = () => {
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mt-4 md:mt-6">
         <div>
           <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
-            Audio Library Overview
+            Overview
           </h1>
-          <p className="text-slate-600 mt-1">Track your audio upload performance and trends</p>
+          <p className="text-slate-600 mt-1">Track your performance and trends</p>
         </div>
 
       </div>
