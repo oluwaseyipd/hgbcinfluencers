@@ -241,7 +241,7 @@ const SpecialEvents = () => {
                       {/* Action Buttons */}
                       <div className="flex space-x-2">
                         <button
-                          className={`flex-1 py-3 px-4 bg-gradient-to-r ${colors.gradient} text-white rounded-xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105 active:scale-95`}
+                          className={`flex-1 py-3 px-4 bg-gradient-to-r ${colors.gradient} cursor-pointer text-white rounded-xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105 active:scale-95`}
                         >
                           <div className="flex items-center justify-center">
                             <Calendar className="w-4 h-4 mr-2" />
@@ -379,12 +379,12 @@ const SpecialEvents = () => {
                       </div>
                     </div>
 
-                    <button className={`w-full py-2 px-4 bg-gradient-to-r ${colors.gradient} text-white rounded-lg text-sm font-medium hover:shadow-lg transition-all duration-300 group-hover:scale-105`}>
+                    {/* <button className={`w-full py-2 px-4 bg-gradient-to-r ${colors.gradient} text-white rounded-lg text-sm font-medium hover:shadow-lg transition-all duration-300 group-hover:scale-105`}>
                       <div className="flex items-center justify-center">
                         Learn More
                         <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                       </div>
-                    </button>
+                    </button> */}
                   </div>
                 </div>
               );
