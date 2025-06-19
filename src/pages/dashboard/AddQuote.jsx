@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { FaPlus, FaTrash, FaImage, FaUpload, FaCheck } from "react-icons/fa6";
 import { ArrowLeft, Upload, X } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const AddQuote = () => {
   const [selectedImages, setSelectedImages] = useState([]);
@@ -8,6 +9,8 @@ const AddQuote = () => {
   const [year, setYear] = useState('');
   const [isUploading, setIsUploading] = useState(false);
   const fileInputRef = useRef(null);
+  const [showNotification, setShowNotification] = useState(false);
+  const navigate = useNavigate();
 
   const categories = ["Conference", "Leadership Training", "Sunday Service", "Evangelism", "Bible Study"];
   const years = ["2024", "2025"];
@@ -97,17 +100,22 @@ const AddQuote = () => {
 
     setIsUploading(true);
 
-    // Simulate upload process
     try {
-      // Here you would typically upload to your server
       await new Promise(resolve => setTimeout(resolve, 2000));
       
-      alert(`Successfully uploaded ${selectedImages.length} quote(s)!`);
-      
+      // Show notification instead of alert
+      setShowNotification(true);
+
       // Reset form
       setSelectedImages([]);
       setCategory('');
       setYear('');
+
+      // Redirect after 1.5s
+      setTimeout(() => {
+        setShowNotification(false);
+        navigate('/admin/quotes');
+      }, 1500);
     } catch (error) {
       alert('Upload failed. Please try again.');
     } finally {
@@ -117,6 +125,16 @@ const AddQuote = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 mt-14 p-4 lg:p-6">
+          {/* Notification */}
+      {showNotification && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/20 transition-all">
+          <div className="bg-white rounded-xl shadow-lg px-8 py-6 flex items-center space-x-3">
+            <FaCheck className="text-green-500 w-7 h-7" />
+            <span className="text-lg font-semibold text-gray-800">Quotes added successfully</span>
+          </div>
+        </div>
+      )}
+      
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">

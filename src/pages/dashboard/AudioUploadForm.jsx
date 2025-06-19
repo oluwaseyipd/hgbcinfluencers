@@ -1,5 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { Upload, File, Loader, Music, Image, Play, Clock, User, Calendar } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+
 
 const AudioUploadForm = () => {
   const [uploadStep, setUploadStep] = useState('upload'); // 'upload', 'form'
@@ -7,6 +9,7 @@ const AudioUploadForm = () => {
   const [coverImage, setCoverImage] = useState(null);
   const [dragActive, setDragActive] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
+   const [showNotification, setShowNotification] = useState(false);
   const [formData, setFormData] = useState({
     title: '',
     speaker: '',
@@ -19,6 +22,7 @@ const AudioUploadForm = () => {
   
   const fileInputRef = useRef(null);
   const coverInputRef = useRef(null);
+  const navigate = useNavigate();
 
   // Handle drag events
   const handleDrag = (e) => {
@@ -88,16 +92,57 @@ const AudioUploadForm = () => {
     }));
   };
 
-  // Handle form submission
-  const handleSubmit = () => {
-    console.log('Form Data:', formData);
-    console.log('Audio File:', audioFile);
-    console.log('Cover Image:', coverImage);
-    alert('Audio uploaded successfully!');
+// Handle form submission with validation and notification
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Validation
+    if (
+      !audioFile ||
+      !formData.title.trim() ||
+      !formData.speaker.trim() ||
+      !formData.date ||
+      !formData.category ||
+      !coverImage ||
+      !formData.description.trim()
+    ) {
+      alert('Please fill in all required fields and upload audio and cover image.');
+      return;
+    }
+
+    setShowNotification(true);
+
+    setTimeout(() => {
+      setShowNotification(false);
+      // Optionally reset form here
+      setAudioFile(null);
+      setCoverImage(null);
+      setFormData({
+        title: '',
+        speaker: '',
+        date: '',
+        duration: '',
+        description: '',
+        category: '',
+        audioCoverPhoto: ''
+      });
+      setUploadStep('upload');
+      navigate('/admin/audio');
+    }, 1500);
   };
+
 
   return (
     <div className="p-4 lg:p-6 mt-8 bg-gray-50">
+            {/* Notification */}
+      {showNotification && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/20 transition-all">
+          <div className="bg-white rounded-xl shadow-lg px-8 py-6 flex items-center space-x-3">
+            <Check className="text-green-500 w-7 h-7" />
+            <span className="text-lg font-semibold text-gray-800">Audio uploaded successfully</span>
+          </div>
+        </div>
+      )}
       {/* Upload Step - Full Screen */}
       {uploadStep === 'upload' && (
         <div className="flex items-center justify-center min-h-screen">

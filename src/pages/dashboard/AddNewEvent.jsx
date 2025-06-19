@@ -1,9 +1,12 @@
 import React, { useState, useRef } from 'react';
+import { useNavigate } from 'react-router-dom'; 
 import { Upload, Image, Calendar, MapPin, User, Clock, DollarSign, Users, FileText, Tag, ArrowLeft } from 'lucide-react';
 
 const AddNewEvent = () => {
   const [coverImage, setCoverImage] = useState(null);
   const [dragActive, setDragActive] = useState(false);
+   const [showNotification, setShowNotification] = useState(false); 
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     title: '',
     speaker: '',
@@ -93,12 +96,44 @@ const AddNewEvent = () => {
   };
 
   // Handle form submission
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Event Data:', formData);
-    console.log('Cover Image:', coverImage);
-    alert('Event created successfully!');
-  };
+const handleSubmit = (e) => {
+  e.preventDefault();
+
+  // Validation: required fields
+  if (
+    !coverImage ||
+    !formData.title.trim() ||
+    !formData.speaker.trim() ||
+    !formData.category ||
+    !formData.description.trim() ||
+    !formData.date ||
+    !formData.time ||
+    !formData.location.trim() ||
+    !formData.price.trim()
+  ) {
+    alert('Please fill in all required fields and upload a cover image.');
+    return;
+  }
+
+  // Optionally, validate email and phone
+  if (formData.contactEmail && !/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(formData.contactEmail)) {
+    alert('Please enter a valid email address.');
+    return;
+  }
+  if (formData.contactPhone && !/^[\d+\s()-]{7,}$/.test(formData.contactPhone)) {
+    alert('Please enter a valid phone number.');
+    return;
+  }
+
+  // Simulate upload/creation
+  setShowNotification(true);
+  setTimeout(() => {
+    setShowNotification(false);
+    // setFormData({ ...});
+setCoverImage(null);
+    navigate('/admin/events');
+  }, 1500);
+};
 
   // Get preview color based on category
   const getCategoryColor = (category) => {
@@ -119,6 +154,17 @@ const AddNewEvent = () => {
 
   return (
     <div className="p-4 lg:p-6 mt-8 bg-gray-50 min-h-screen">
+         {/* Notification */}
+    {showNotification && (
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/20 transition-all">
+        <div className="bg-white rounded-xl shadow-lg px-8 py-6 flex items-center space-x-3">
+          <Check className="text-green-500 w-7 h-7" />
+          <span className="text-lg font-semibold text-gray-800">Event created successfully</span>
+        </div>
+      </div>
+    )}
+    {/* ...rest of your code... */}
+
       {/* Header */}
       <div className="mb-8">
         <div className="flex items-center mt-5 md:mt-0 gap-4 mb-4">
