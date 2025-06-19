@@ -123,7 +123,7 @@ const AddNewEvent = () => {
       <div className="mb-8">
         <div className="flex items-center mt-5 md:mt-0 gap-4 mb-4">
           <a 
-          href='/hgbcinfluencers/admin/events'
+          href='/admin/events'
           className="p-2 bg-blue-500 hover:bg-blue-400 rounded-lg transition-colors">
             <ArrowLeft className="h-5 w-5 text-white" />
           </a>

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { FaPlus, FaChartColumn, FaHeadphonesSimple, FaShield, FaXmark, FaCalendar } from "react-icons/fa6";
+import { FaPlus, FaChartColumn, FaHeadphonesSimple, FaShield, FaXmark, FaCalendar, FaQuoteLeft } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
 
 const Sidebar = ({ toggleSidebar, sidebarOpen  }) => {
@@ -108,6 +108,14 @@ const Sidebar = ({ toggleSidebar, sidebarOpen  }) => {
             >
               <FaCalendar className='text-xl group-hover:text-blue-400 transition-colors' />
               <span className="font-medium">Events</span>
+            </Link>
+                <Link
+              to="/admin/quotes"
+              onClick={handleNavItemClick}
+              className="flex items-center space-x-3 px-4 py-3 text-slate-300 hover:text-white hover:bg-slate-700/50 rounded-lg transition-all duration-200 group"
+            >
+              <FaQuoteLeft className='text-xl group-hover:text-purple-400 transition-colors' />
+              <span className="font-medium">Quotes</span>
             </Link>
           </div>
         </nav>

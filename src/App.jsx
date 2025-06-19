@@ -24,6 +24,8 @@ import Events from "./pages/dashboard/Events"
 import AudioUploadForm from "./pages/dashboard/AudioUploadForm";
 import Signin from "./pages/dashboard/Signin";
 import AddNewEvent from "./pages/dashboard/AddNewEvent";
+import Quotes from "./pages/dashboard/Quotes";
+import AddQuote from "./pages/dashboard/AddQuote";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -75,8 +77,10 @@ function App() {
             <Route path="overview" element={<Overview />} />
             <Route path="audio" element={<Audio />} />
             <Route path="events" element={<Events />} />
+            <Route path="quotes" element={<Quotes />} />
             <Route path="audioupload" element={<AudioUploadForm />} />
-              <Route path="addevent" element={<AddNewEvent/>} />
+            <Route path="addevent" element={<AddNewEvent/>} />
+            <Route path="addquote" element={<AddQuote/>} />
             {/* 404 for unmatched admin routes */}
             <Route path="*" element={<PageNotFound />} />
           </Route>

@@ -12,7 +12,7 @@ const EventsDashboard = () => {
   const [viewMode, setViewMode] = useState('grid'); // grid or list
   const [showFilters, setShowFilters] = useState(false);
 
-  const itemsPerPage = 3;
+  const itemsPerPage = 8;
   const categories = ["Conference", "Leadership Training", "Revival", "Evangelism"];
   const years = ["2024", "2025"];
 
