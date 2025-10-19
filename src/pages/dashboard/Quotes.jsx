@@ -56,7 +56,7 @@ const Quotes = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [quotesData, setQuotesData] = useState(quotes);
 
-  const itemsPerPage = 10;
+  const itemsPerPage = 16;
   const categories = ["Conference", "Leadership Training", "Sunday Service", "Evangelism", "Bible Study"];
   const years = ["2024", "2025"];
 
@@ -184,7 +184,7 @@ const Quotes = () => {
             </button>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {paginatedQuotes.map((quote) => (
               <QuoteCard key={quote.id} quote={quote} onDelete={handleDeleteQuote} />
             ))}

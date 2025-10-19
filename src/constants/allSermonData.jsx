@@ -1,16 +1,158 @@
-
-export const sermonData = [
+export const audioFiles = [
   {
     id: 1,
-    date: '',
-    title: "Month of New Things",
-    category: "Uplifting Hour",
-    audioCover: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
-    audioSource: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
-    sermonDetails: {
-      bibleText: "Isaiah 43:19",
-      minister: "Pastor Samson Ayangoke",
-      sermonNote: "God is doing something new in our lives. We must be ready to embrace the changes He brings."
-    }
-  }
-]
+    title: "Walking in Faith",
+    minister: "Pastor John Smith",
+    date: "2024-12-15",
+    duration: "35:42",
+    bibleText: "John 3:16",
+    category: "Faith",
+    coverPhoto: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=300&fit=crop",
+    sermonNote: "A powerful message about trusting God in uncertain times and stepping out in faith.",
+    featureStatus: true,
+    audioSource: "https://www.media.hgbcinfluencers.org/audio/2025/June/Month of New Things.mp3"
+  },
+  {
+    id: 2,
+    title: "Love Your Neighbors",
+    minister: "Pastor Sarah Johnson",
+    date: "2024-12-08",
+    duration: "28:15",
+    bibleText: "John 3:16",
+    category: "Love",
+    coverPhoto: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=500&h=300&fit=crop",
+    sermonNote: "Understanding what it truly means to love our neighbors as ourselves in today's world.",
+    featureStatus: false,
+    audioSource: "https://www.soundjay.com/misc/sounds/bell-ringing-04.wav"
+  },
+  {
+    id: 3,
+    title: "The Power of Prayer",
+    minister: "Pastor Michael Davis",
+    date: "2024-12-01",
+    duration: "42:18",
+    bibleText: "John 3:16",
+    category: "Prayer",
+    coverPhoto: "https://images.unsplash.com/photo-1438032005730-c779502df39b?w=500&h=300&fit=crop",
+    sermonNote: "Exploring the transformative power of prayer and how it connects us with God.",
+    featureStatus: true,
+    audioSource: "https://www.soundjay.com/misc/sounds/bell-ringing-03.wav"
+  },
+  {
+    id: 4,
+    title: "Grace and Forgiveness",
+    minister: "Pastor Emily Wilson",
+    date: "2024-11-24",
+    duration: "31:05",
+    bibleText: "John 3:16",
+    category: "Grace",
+    coverPhoto: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=500&h=300&fit=crop",
+    sermonNote: "The beautiful gift of God's grace and our call to extend forgiveness to others.",
+    featureStatus: false,
+    audioSource: "https://www.soundjay.com/misc/sounds/bell-ringing-02.wav"
+  },
+  {
+    id: 5,
+    title: "Building Strong Foundations",
+    minister: "Pastor Robert Brown",
+    date: "2024-11-17",
+    duration: "38:22",
+    bibleText: "John 3:16",
+    category: "Foundation",
+    coverPhoto: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=500&h=300&fit=crop",
+    sermonNote: "Building our lives on the solid rock of Christ's teachings and love.",
+    featureStatus: true,
+    audioSource: "https://www.soundjay.com/misc/sounds/bell-ringing-01.wav"
+  },
+  {
+    id: 6,
+    title: "Hope in Dark Times",
+    minister: "Pastor Lisa Anderson",
+    date: "2024-11-10",
+    duration: "33:47",
+    bibleText: "John 3:16",
+    category: "Hope",
+    coverPhoto: "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?w=500&h=300&fit=crop",
+    sermonNote: "Finding hope and light even in our darkest moments through God's promises.",
+    featureStatus: false,
+    audioSource: "https://www.soundjay.com/misc/sounds/spring-birds-chirping-2.wav"
+  },
+  {
+    id: 7,
+    title: "Serving Others",
+    minister: "Pastor David Miller",
+    date: "2024-11-03",
+    duration: "29:33",
+    bibleText: "John 3:16",
+    category: "Service",
+    coverPhoto: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=500&h=300&fit=crop",
+    sermonNote: "The joy and fulfillment that comes from serving others in Christ's name.",
+    featureStatus: true,
+    audioSource: "https://www.soundjay.com/misc/sounds/spring-birds-chirping-1.wav"
+  },
+  {
+    id: 8,
+    title: "Wisdom from Above",
+    minister: "Pastor Jennifer Taylor",
+    date: "2024-10-27",
+    duration: "36:12",
+    bibleText: "John 3:16",
+    category: "Wisdom",
+    coverPhoto: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=500&h=300&fit=crop",
+    sermonNote: "Seeking God's wisdom in our daily decisions and life choices.",
+    featureStatus: false,
+    audioSource: "https://www.soundjay.com/misc/sounds/ocean-wave-1.wav"
+  },
+  {
+    id: 9,
+    title: "The Good Shepherd",
+    minister: "Pastor Mark Thompson",
+    date: "2024-10-20",
+    duration: "34:58",
+    bibleText: "John 3:16",
+    category: "Guidance",
+    coverPhoto: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&h=300&fit=crop",
+    sermonNote: "Understanding Jesus as our Good Shepherd who guides and protects us.",
+    featureStatus: true,
+    audioSource: "https://www.soundjay.com/misc/sounds/ocean-wave-2.wav"
+  },
+  {
+    id: 10,
+    title: "Bearing Good Fruit",
+    minister: "Pastor Rachel White",
+    date: "2024-10-13",
+    duration: "30:41",
+    bibleText: "John 3:16",
+    category: "Growth",
+    coverPhoto: "https://images.unsplash.com/photo-1460627390041-532a28402358?w=500&h=300&fit=crop",
+    sermonNote: "Living a life that bears good fruit through the Spirit's work in us.",
+    featureStatus: false,
+    audioSource: "https://www.soundjay.com/misc/sounds/rain-01.wav"
+  },
+  {
+    id: 11,
+    title: "Unity in Christ",
+    minister: "Pastor James Clark",
+    date: "2024-10-06",
+    duration: "32:15",
+    bibleText: "John 3:16",
+    category: "Unity",
+    coverPhoto: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=500&h=300&fit=crop",
+    sermonNote: "The importance of unity within the body of Christ and our local community.",
+    featureStatus: true,
+    audioSource: "https://www.soundjay.com/misc/sounds/rain-02.wav"
+  },
+  {
+    id: 12,
+    title: "Trusting God's Plan",
+    minister: "Pastor Susan Garcia",
+    date: "2024-09-29",
+    duration: "37:26",
+    bibleText: "John 3:16",
+    category: "Trust",
+    coverPhoto: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&h=300&fit=crop",
+    sermonNote: "Learning to trust in God's perfect plan even when we don't understand.",
+    featureStatus: false,
+    audioSource: "https://www.media.hgbcinfluencers.org/audio/2025/June/Month of New Things.mp3"
+  },
+];

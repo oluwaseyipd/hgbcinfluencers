@@ -1,4 +1,4 @@
-import { weeklyQuote } from "../constants/data";
+import { quotes } from "../constants/allQuoteData";
 import { FaLink, FaDownload } from "react-icons/fa6";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
@@ -64,16 +64,16 @@ const WeeklyQoute = () => {
             },
             1024: {
               slidesPerView: 3,
-              spaceBetween: 30,
+              spaceBetween: 30, 
             },
           }}
           className="pb-12"
         >
-          {weeklyQuote.map((item, id) => (
+          {quotes.slice(-6).reverse().map((item, id) => (
             <SwiperSlide key={id}> 
               <div className="relative group overflow-hidden rounded-lg shadow-lg">
                 <img 
-                  src={item.img} 
+                  src={item.url} 
                   alt="Weekly Quote Image"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -83,7 +83,7 @@ const WeeklyQoute = () => {
                   <div className="flex gap-6">
                     {/* Copy URL Button */}
                     <button
-                      onClick={() => copyImageURL(item.img)}
+                      onClick={() => copyImageURL(item.url)}
                       className="flex flex-col items-center gap-2 cursor-pointer text-white hover:text-orange-400 transition-colors duration-200 p-3 rounded-lg hover:bg-white hover:bg-opacity-20"
                       title="Copy Image URL"
                     >
@@ -93,7 +93,7 @@ const WeeklyQoute = () => {
                     
                     {/* Download Button */}
                     <button
-                      onClick={() => downloadImage(item.img, `quote-${id + 1}`)}
+                      onClick={() => downloadImage(item.url, `quote-${id + 1}`)}
                       className="flex flex-col items-center gap-2 cursor-pointer text-white hover:text-orange-400 transition-colors duration-200 p-3 rounded-lg hover:bg-white hover:bg-opacity-20"
                       title="Download Image"
                     >

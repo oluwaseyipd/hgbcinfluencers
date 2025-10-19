@@ -3,7 +3,7 @@ import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper/modules";
-import { latestSermon } from "../constants/latestSermon"; 
+import { audioFiles } from "../constants/allSermonData"; 
 import { FaAngleRight, FaCalendar } from "react-icons/fa6";
 
 const LatestSermon = () => {
@@ -43,13 +43,16 @@ const LatestSermon = () => {
           }}
           className="pb-12"
         >
-          {latestSermon.map((item, index) => (
+          {[...audioFiles]
+      .filter(item => item.featureStatus === true) // Only featured
+      .sort((a, b) => b.id - a.id)                // Newest first (by id)
+      .slice(0, 6) .map((item, index) => (
             <SwiperSlide key={index}>
               <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 group">
                 {/* Image Container */}
                 <div className="relative overflow-hidden">
                   <img 
-                    src={item.img} 
+                    src={item.coverPhoto} 
                     alt={item.title}
                     className="w-full h-48 md:h-56 object-cover group-hover:scale-105 transition-transform duration-300"
                   />

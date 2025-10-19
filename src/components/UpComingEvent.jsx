@@ -2,29 +2,10 @@ import React from 'react';
 import { FaCalendarDays, FaGlobe, FaBuilding } from 'react-icons/fa6';
 import give1 from "../assets/images/image-2.jpg";
 import give2 from "../assets/images/photizo.jpg";
-import {upcomingEvent} from "../constants/data";
+// import {upcomingEvent} from "../constants/data";
+import { events, colorMap } from '../constants/allEventData';
 
 const UpComingEvent = () => {
-  const colorMap = {
-    purple: {
-      badge: "from-purple-500 to-purple-600",
-      hover: "group-hover:text-purple-600",
-      text: "text-purple-600",
-      gradient: "from-purple-900/40"
-    },
-    blue: {
-      badge: "from-blue-500 to-indigo-600", 
-      hover: "group-hover:text-blue-600",
-      text: "text-blue-600",
-      gradient: "from-blue-900/40"
-    },
-    emerald: {
-      badge: "from-emerald-500 to-teal-600",
-      hover: "group-hover:text-emerald-600", 
-      text: "text-emerald-600",
-      gradient: "from-emerald-900/40"
-    }
-  };
 
   return (
     <div className="py-20 px-4 md:px-12 lg:px-[200px] bg-gradient-to-br from-slate-50 via-white to-purple-50 relative overflow-hidden">
@@ -48,9 +29,9 @@ const UpComingEvent = () => {
         
         {/* Events Timeline - Mobile: Each event followed by its image */}
         <div className="col-span-1 space-y-8">
-          {upcomingEvent.map((event, index) => {
-            const IconComponent = event.icon;
-            const colors = colorMap[event.color];
+          {events.slice(0,3).map((event, index) => {
+            // const IconComponent = event.icon;
+            const colors = colorMap[event.color] || colorMap.red; 
             
             return (
               <div key={index} >
@@ -84,7 +65,7 @@ const UpComingEvent = () => {
                       </div>
                     )}
                     <div className={`flex items-center ${colors.text} font-semibold`}>
-                      <IconComponent className="w-5 h-5 mr-2" />
+                      {/* <IconComponent className="w-5 h-5 mr-2" /> */}
                       {event.tag}
                     </div>
                   </div>

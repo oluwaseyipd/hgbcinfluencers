@@ -18,7 +18,7 @@ export const navLinks = [
     {name: "Who We Are", path: "/about"},
     {name: "Watch Live", path: "/watch-live"},
     {name: "Sermon", path: "/sermon"},
-    {name: "The Builders Academy", path: "/builders-academy"},
+    // {name: "The Builders Academy", path: "/builders-academy"},
     {name: "Special Events", path: "/special-events"},
 ];
 

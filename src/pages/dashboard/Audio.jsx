@@ -3,7 +3,7 @@ import { FaPlus, FaMagnifyingGlass, FaChevronDown, FaChevronLeft, FaChevronRight
 import { Link } from 'react-router-dom';
 import DeleteConfirmationModal from '../../components/dashboard/DeleteConfirmationModal';
 import AudioUploadForm from './AudioUploadForm';
-import {audioFiles} from '../../constants/latestSermon';
+import {audioFiles} from '../../constants/allSermonData';
 
 const Audio = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -30,7 +30,7 @@ const Audio = () => {
   });
 
   // Pagination
-  const totalPages = Math.ceil(filteredAudio.length / itemsPerPage);
+  const totalPages = Math.ceil(filteredAudio.duration / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const paginatedAudio = filteredAudio.slice(startIndex, startIndex + itemsPerPage);
 
@@ -175,7 +175,7 @@ const Audio = () => {
                 <div className="col-span-5 lg:col-span-4 flex items-center space-x-4">
                   <div className="relative flex-shrink-0">
                     <img
-                      src={audio.image}
+                      src={audio.coverPhoto}
                       alt={audio.title}
                       className="w-12 h-12 rounded-lg object-cover"
                     />
@@ -200,7 +200,7 @@ const Audio = () => {
 
                 {/* Length */}
                 <div className="col-span-2 hidden sm:block text-slate-600 font-mono text-sm">
-                  {audio.length}
+                  {audio.duration}
                 </div>
 
                 {/* Actions */}
@@ -226,7 +226,7 @@ const Audio = () => {
           <div className="px-6 py-4 border-t border-slate-200">
             <div className="flex items-center justify-between">
               <div className="text-sm text-slate-600">
-                Showing {startIndex + 1} to {Math.min(startIndex + itemsPerPage, filteredAudio.length)} of {filteredAudio.length} results
+                Showing {startIndex + 1} to {Math.min(startIndex + itemsPerPage, filteredAudio.duration)} of {filteredAudio.duration} results
               </div>
               <div className="flex items-center space-x-2">
                 <button
@@ -237,7 +237,7 @@ const Audio = () => {
                   <FaChevronLeft />
                 </button>
                 
-                {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
+                {Array.from({ duration: totalPages }, (_, i) => i + 1).map(page => (
                   <button
                     key={page}
                     onClick={() => setCurrentPage(page)}

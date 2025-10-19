@@ -17,6 +17,7 @@ const AudioUploadForm = () => {
     duration: '',
     description: '',
     category: '',
+    bibleText:'',
     audioCoverPhoto: ''
   });
   
@@ -103,6 +104,7 @@ const AudioUploadForm = () => {
       !formData.speaker.trim() ||
       !formData.date ||
       !formData.category ||
+      !formData.bibleText ||
       !coverImage ||
       !formData.description.trim()
     ) {
@@ -124,6 +126,7 @@ const AudioUploadForm = () => {
         duration: '',
         description: '',
         category: '',
+        bibleText: '',
         audioCoverPhoto: ''
       });
       setUploadStep('upload');
@@ -256,7 +259,7 @@ const AudioUploadForm = () => {
                 </div>
 
                 {/* Series and Category */}
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-3 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Category
@@ -276,6 +279,20 @@ const AudioUploadForm = () => {
                     </select>
                   </div>
 
+                  {/* BIble Text */}
+                   <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Bible Text
+                    </label>
+                    <input
+                      type="text"
+                      name="bibleText"
+                      value={formData.bibleText}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 border text-gray-800 border-gray-300 rounded-lg outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      placeholder="e.g., John 3:16-20, Isaiah 1:16"
+                    />
+                  </div>
                                  {/* Cover Image Upload */}
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -320,6 +337,26 @@ const AudioUploadForm = () => {
                     placeholder="Enter description or summary"
                   />
                 </div>
+
+                <div className="pt-2">
+  <label className="inline-flex items-center cursor-pointer">
+    <input
+      type="checkbox"
+      name="addToLatestSermon"
+      checked={formData.addToLatestSermon || false}
+      onChange={e =>
+        setFormData(prev => ({
+          ...prev,
+          addToLatestSermon: e.target.checked
+        }))
+      }
+      className="form-checkbox h-5 w-5 text-blue-600 rounded focus:ring-blue-500"
+    />
+    <span className="ml-2 text-gray-700 font-medium">
+      Add audio to latest sermon slide
+    </span>
+  </label>
+</div>
 
                 {/* Submit Button */}
                 <div className="pt-6">
@@ -398,6 +435,13 @@ const AudioUploadForm = () => {
                     <div className="mb-3">
                       <span className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">
                         {formData.category}
+                      </span>
+                    </div>
+                  )}
+                    {formData.bibleText && (
+                    <div className="mb-3">
+                      <span className="text-gray-800 text-xs px-2 py-1 rounded-full">
+                        {formData.bibleText}
                       </span>
                     </div>
                   )}
