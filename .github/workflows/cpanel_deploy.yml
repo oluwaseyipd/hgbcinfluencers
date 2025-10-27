@@ -20,7 +20,6 @@ jobs:
           # Option 2: Fix the path (see below)
       
       - name: Install dependencies and build
-        working-directory: ./client
         run: |
           npm ci
           npm run build
@@ -35,7 +34,7 @@ jobs:
           protocol: ftps
           security: loose
           server-dir: /
-          local-dir: ./client/dist/
+          local-dir: ./dist/
           exclude: |
             **/.git*
             **/.git*/**
